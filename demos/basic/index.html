@@ -8,22 +8,10 @@
 	<script src="../build/metal.js"></script>
 	<script src="../../../node_modules/handlebars/dist/handlebars.js"></script>
 	<script>
-		// window.component = new metal.Parent({
-		// 	name: 'Maira',
-		// 	childName: 'Test'
-		// });
-
-		var array = [];
-
-		for (var i = 1000 - 1; i >= 0; i--) {
-			array.push(i);
-		}
-
-		console.time('PerformanceTest');
-		window.component = new metal.PerformanceTest({
-			array: array,
+		window.component = new metal.Parent({
+			name: 'Maira',
+			childName: 'Test'
 		});
-		console.timeEnd('PerformanceTest');
 	</script>
 </body>
 </html>
