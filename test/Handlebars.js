@@ -1,9 +1,9 @@
 'use strict';
 
 import dom from 'metal-dom';
-import MustacheComponent from '../src/MustacheComponent';
+import HandlebarsComponent from '../src/HandlebarsComponent';
 
-describe('Soy', function() {
+describe('Handlebars', function() {
 	var component;
 
 	afterEach(function() {
@@ -14,9 +14,9 @@ describe('Soy', function() {
 
 	describe('Rendering', function() {
 		it('should render contents from component\'s "render" function', function() {
-			class TestComponent extends MustacheComponent {
+			class TestComponent extends HandlebarsComponent {
 				render() {
-					return '<div class="test">Hello <b>{{ name }}</b>!</div>';
+					return '<p>Hello, my name is <b>{{name}}</b>.</p>';
 				}
 			}
 
@@ -27,12 +27,11 @@ describe('Soy', function() {
 			};
 
 			component = new TestComponent({
-				name: 'World'
+				name: 'Chema'
 			});
 
-			assert.strictEqual('DIV', component.element.tagName);
-			assert.ok(dom.hasClass(component.element, 'test'));
-			assert.strictEqual('Hello World!', component.element.textContent);
+			assert.strictEqual('P', component.element.tagName);
+			assert.strictEqual('Hello, my name is Chema.', component.element.textContent);
 		});
 	});
 });

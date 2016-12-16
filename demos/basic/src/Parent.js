@@ -1,11 +1,8 @@
 import { ComponentRegistry } from 'metal-component';
-import MustacheComponent from '../../../src/MustacheComponent';
-import CancellablePromise from 'metal-promise';
+import HandlebarsComponent from '../../../src/HandlebarsComponent';
 
-class Parent extends MustacheComponent {
+class Parent extends HandlebarsComponent {
 	render() {
-		var deferred = CancellablePromise.resolve();
-
 		return `<div>I'm <b>{{ name }}</b>! I have a sub component: <Child name="{{ childName }}"></div>`;
 	}
 }

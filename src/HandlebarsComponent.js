@@ -3,23 +3,23 @@
 import { validators, Config } from 'metal-state';
 import Component from 'metal-component';
 import IncrementalDomRenderer from 'metal-incremental-dom';
-import MustacheRenderer from './MustacheRenderer';
+import HandlebarsRenderer from './HandlebarsRenderer';
 
 /**
- * A component that has built-in integration with Mustache templates. Example:
+ * A component that has built-in integration with Handlebars templates. Example:
  *
  * <code>
- * class MyComponent extends MustacheComponent {
+ * class MyComponent extends HandlebarsComponent {
  *   render() {
  *     return <div>Hello World</div>
  *   }
  * }
  * </code>
  */
-class MustacheComponent extends Component {
+class HandlebarsComponent extends Component {
 	/**
 	 * Creates and renders the given function, which can either be a simple
-	 * Mustache function or a component constructor.
+	 * Handlebars function or a component constructor.
 	 * @param {!function()} fnOrCtor Either be a simple jsx dom function or a
 	 *     component constructor.
 	 * @param {Object=} opt_data Optional config data for the function.
@@ -32,7 +32,7 @@ class MustacheComponent extends Component {
 	}
 }
 
-MustacheComponent.RENDERER = MustacheRenderer;
+HandlebarsComponent.RENDERER = HandlebarsRenderer;
 
-export default MustacheComponent;
-export { validators, Config, MustacheComponent };
+export default HandlebarsComponent;
+export { validators, Config, HandlebarsComponent };

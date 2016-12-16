@@ -5,9 +5,9 @@ var metal = require('gulp-metal');
 var runSequence = require('run-sequence');
 
 metal.registerTasks({
-	bundleFileName: 'mustache.js',
+	bundleFileName: 'handlebars.js',
 	mainBuildJsTasks: ['build:globals'],
-	moduleName: 'metal-mustache'
+	moduleName: 'metal-handlebars'
 });
 
 gulp.task('default', function(done) {

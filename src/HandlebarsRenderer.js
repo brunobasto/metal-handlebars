@@ -2,12 +2,11 @@
 
 import IncrementalDomRenderer from 'metal-incremental-dom';
 import HTML2IncDom from 'html2incdom-bruno';
-// import Mustache from 'mustache';
 
 /**
- * Renderer that handles Mustache.
+ * Renderer that handles Handlebars.
  */
-class MustacheRenderer extends IncrementalDomRenderer.constructor {
+class HandlebarsRenderer extends IncrementalDomRenderer.constructor {
 	/**
 	 * Overrides the original method from `IncrementalDomRenderer` to handle the
 	 * case where developers return a child node directly from the "render"
@@ -17,15 +16,15 @@ class MustacheRenderer extends IncrementalDomRenderer.constructor {
 	 */
 	renderIncDom(component) {
 		if (component.render) {
-			const string = Mustache.render(component.render(), component.getState());
-			HTML2IncDom.run(string);
+			var template = Handlebars.compile(component.render());
+			HTML2IncDom.run(template(component.getState()));
 		} else {
 			super.renderIncDom(component);
 		}
 	}
 }
 
-const mustacheRenderer_ = new MustacheRenderer();
-mustacheRenderer_.RENDERER_NAME = 'mustache';
+const mustacheRenderer_ = new HandlebarsRenderer();
+mustacheRenderer_.RENDERER_NAME = 'handlebars';
 
 export default mustacheRenderer_;

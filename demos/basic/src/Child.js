@@ -1,7 +1,7 @@
 import { ComponentRegistry } from 'metal-component';
-import MustacheComponent from '../../../src/MustacheComponent';
+import HandlebarsComponent from '../../../src/HandlebarsComponent';
 
-class Child extends MustacheComponent {
+class Child extends HandlebarsComponent {
 	render() {
 		return '<div>I\'m a sub component called <b>{{ name }}.</b></div>';
 	}

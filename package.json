@@ -1,15 +1,15 @@
 {
-  "name": "metal-mustache",
-  "version": "0.0.1",
-  "description": "A mustache template renderer to be used with Metal.js's Component class",
+  "name": "metal-handlebars",
+  "version": "0.0.2",
+  "description": "A handlebars template renderer to be used with Metal.js's Component class",
   "license": "BSD",
-  "repository": "https://github.com/brunobasto/metal-mustache",
+  "repository": "https://github.com/brunobasto/metal-handlebars",
   "engines": {
     "node": ">=0.12.0",
     "npm": ">=3.0.0"
   },
-  "jsnext:main": "src/Mustache.js",
-  "main": "lib/Mustache.js",
+  "jsnext:main": "src/HandlebarsComponent.js",
+  "main": "lib/HandlebarsComponent.js",
   "files": [
     "lib",
     "src"
@@ -21,15 +21,15 @@
   },
   "keywords": [
     "metal",
-    "mustache"
+    "handlebars"
   ],
   "dependencies": {
+    "handlebars": "^4.0.6",
     "html2incdom-bruno": "0.0.1",
     "metal": "^2.5.12",
     "metal-component": "^2.5.16",
     "metal-dom": "^2.5.16",
-    "metal-incremental-dom": "^2.5.16",
-    "mustache": "^2.3.0"
+    "metal-incremental-dom": "^2.5.16"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
